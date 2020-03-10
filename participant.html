@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Background Info</title>
+  <link rel="shortcut icon" href="img/favicon.ico" />
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+  
+  <!-- jQuery and Bootstrap JS -->
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- BootstrapValidator JS -->
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+   
+</head>
+
+<body id="page-top">
+
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+
+	  <!-- Page Heading -->
+	  <div class="align-items-center mb-4">
+		<h1 class="h4 mb-1 text-center font-weight-bold text-dark"> Classroom Ranking Survey </h1>
+		<p class="h5 mb-1 text-center font-weight-light text-dark"> Based on the following student cards, adjust the scales to reflect which student each word is more associated with. </p>
+	  </div>
+	
+		<form role="form" id="participant-form">
+			<input type="text" class="hidden" id="origin" name="origin" value="none">
+			<input type="text" class="hidden" id="user" name="user" value="none">
+			<script> 
+				document.getElementById("user").value = accessCookie("username");
+				document.getElementById("origin").value = location.href.split("/").slice(-1);
+			</script>
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+						  <h6 class="m-0 font-weight-bold text-primary">Information</h6>
+						  <p class="m-0 font-weight-light text-primary"> Select the groups you most closely identify with. </p>
+						</div>
+						<div class="card-body">
+							<div class="form-group">
+								<div class="input-group mb-3">
+								  <div class="input-group-prepend">
+									<label class="input-group-text" for="inputGroupSelect01">Ethnicity</label>
+								  </div>
+								  <select name="self-ethnicity" class="custom-select" id="inputGroupSelect01">
+									<option selected> N/A </option>
+									<option value="Ethnic majority">Ethnic majority</option>
+									<option value="Ethnic minority">Ethnic minority</option>
+									<option value="Multi-ethnic">Multi-ethnic</option>
+								  </select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="input-group mb-3">
+								  <div class="input-group-prepend">
+									<label class="input-group-text" for="inputGroupSelect01">Age</label>
+								  </div>
+								  <select name="self-age" class="custom-select" id="inputGroupSelect01">
+									<option selected> N/A </option>
+									<option value="Teenager">Teenager (13+)</option>
+									<option value="Adult">Adult (18+) </option>
+									<option value="Senior">Senior (65+) </option>
+								  </select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="input-group mb-3">
+								  <div class="input-group-prepend">
+									<label class="input-group-text" for="inputGroupSelect01">Gender</label>
+								  </div>
+								  <select name="self-gender" class="custom-select" id="inputGroupSelect01">
+									<option selected> N/A </option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+									<option value="Other">Other</option>
+								  </select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="input-group mb-3">
+								  <div class="input-group-prepend">
+									<label class="input-group-text" for="inputGroupSelect01">Diagnosis</label>
+								  </div>
+								  <select name="self-diagnosis" class="custom-select" id="inputGroupSelect01">
+									<option selected> N/A </option>
+									<option value="Mental">Mental Disability</option>
+									<option value="Physical">Physical Disability</option>
+									<option value="None">None</option>
+								  </select>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer">
+							<p class="m-0 font-weight-normal text-sm text-secondary"> Select 'N/A' if you do not wish to disclose this information or are unsure. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+						  <h6 class="m-0 font-weight-bold text-primary">Familiarity</h6>
+						  <p class="m-0 font-weight-light text-primary"> Rate your familiarity with each the following groups from 1 (<em>not familiar</em>) to 9 (<em>very familiar</em>). <em>I.s.</em> stands for 'individuals'</p>
+						</div>
+						<div class="card-body">
+							<div class="scales-sm">
+							  <div class="table-inline">
+								<table class="table-sm" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th></th>
+											<th class="th-left">1</th>
+											<th class="th-right">9</th>
+										</tr>
+									</thead>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Infants</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="infant-familiarity" required=""/></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Children</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="child-familiarity" required=""/></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Teenagers</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="teen-familiarity" required=""/></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Adults</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="adult-familiarity" required=""/></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Seniors</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="senior-familiarity" required=""/></td>
+									</tr>
+									
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Mentally-disabled I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="mentally-disabled-familiarity" /></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Physically-disabled I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="physically-disabled-familiarity" /></td>
+									</tr>
+								  </table>
+								</div>
+								<div class="table-inline">
+								  <table class="table-sm" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th></th>
+											<th class="th-left">1</th>
+											<th class="th-right">9</th>
+										</tr>
+									</thead>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Non-disabled I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="non-disabled-familiarity" required=""/></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Male I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="male-familiarity" required=""/></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Female I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="female-familiarity" /></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Gender-other I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="gender-other-familiarity" /></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Multi-ethnic I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01"  name="multi-ethnic-familiarity" required=""/></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Ethnic-majority I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01"  name="ethnic-majority-familiarity" /></td>
+									</tr>
+									<tr>
+									  <td class="header text-xl font-weight-normal text-secondary mb-1">Ethnic-minority I.s.</td>
+									  <td colspan="2"><input class="custom-range" type="range" value="none" min="1" max="9" step="0.01" name="ethnic-minority-familiarity" /></td>
+									</tr>
+								  </table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="submit">
+			  <div class="btn btn-light btn-icon-split">
+				<button type="submit" class="btn" id="participantForm">
+					<span class="icon text-muted">
+					  <i class="fas fa-arrow-right"></i>
+					</span>
+					<span class="text font-weight-bolder mb-1">Begin</span>
+				</button>
+			  </div>
+			</div>
+			
+		</form>
+	</div>
+	<!-- /.container-fluid -->
+	  
+  <!-- Scroll to Top Button 
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a> -->
+  
+  <!-- Footer 
+  <footer class="sticky-footer">
+	<div class="container my-auto">
+	  <div class="copyright text-center my-auto">
+		<span id="user">Hello</span>
+	  </div>
+	</div>
+  </footer> -->
+  <!-- End of Footer -->
+  
+  <script src="jquery.serializeObject.js"></script>
+  <script src="validation-functions.js"></script>
+  
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

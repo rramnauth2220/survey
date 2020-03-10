@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Survey</title>
+  <link rel="shortcut icon" href="img/favicon.ico" />
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+  
+  <!-- jQuery and Bootstrap JS -->
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <!-- BootstrapValidator JS -->
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="student-card.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+  
+</head>
+
+<body id="page-top">
+
+	<!-- Begin Page Content -->
+	<div class="container-fluid">
+
+	  <!-- Page Heading -->
+	  <div class="align-items-center mb-4">
+		<h1 class="h4 mb-1 text-center font-weight-bold text-dark"> Classroom Ranking Survey </h1>
+		<p class="h5 mb-1 text-center font-weight-light text-dark"> Based on the following student cards, adjust the scales to reflect which student each word is more associated with. </p>
+	  </div>
+	<form role="form" id="test-form">
+		<input type="text" class="hidden" id="origin" name="origin" value="none">
+		<input type="text" class="hidden" id="user" name="user" value="none">
+		<div class="hidden" id="hidden_values">
+			<input type="text" class="hidden" name="a_age" value="none">
+			<input type="text" class="hidden" name="a_gender" value="none">
+			<input type="text" class="hidden" name="a_ethnicity" value="none">
+			<input type="text" class="hidden" name="a_disability" value="none">
+			<input type="text" class="hidden" name="a_performance" value="none">
+			<input type="text" class="hidden" name="b_age" value="none">
+			<input type="text" class="hidden" name="b_gender" value="none">
+			<input type="text" class="hidden" name="b_ethnicity" value="none">
+			<input type="text" class="hidden" name="b_disability" value="none">
+			<input type="text" class="hidden" name="b_performance" value="none">
+		</div>
+		<script>
+			var a = getPerformanceTable();
+			var b = getPerformanceTable();
+		</script>
+		
+		  <div class="row">
+			<div class="col-xl-5 col-md-6 mb-4">
+			  <div class="card shadow border-left-primary">
+				<div class="card-body">
+				  <div class="row no-gutters align-items-center">
+					<div class="col mr-2">
+					  <div class="h6 text-xl font-weight-bolder text-primary text-uppercase mb-4">Student A</div>
+					  <div class="table-inline">
+						<table class="table-sm" width="100%" cellspacing="0">
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Age</td>
+							  <td id="a_age" colspan="1" name="a_age" value="none" class="h5 mb-0 font-weight-bold text-gray-800"> Infant</td>
+							</tr>
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Gender</td>
+							  <td id="a_gender" name="a_gender" value="none" colspan="1" class="h5 mb-0 font-weight-bold text-gray-800"> Female </td>
+							</tr>
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Ethnicity</td>
+							  <td id="a_ethnicity" name="a_ethnicity" value="none" colspan="1" class="h5 mb-0 font-weight-bold text-gray-800"> Ethnic Majority</td>
+							</tr>
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Disability</td>
+							  <td id="a_disability" name="a_disability" value="none" colspan="1" class="h5 mb-0 font-weight-bold text-gray-800"> Physical </td>
+							</tr>
+						  </table>
+						</div>
+					</div>
+					<div class="col-auto">
+					  <div class="table-inline">
+						<table id="a_performance" class="table-bordered" width="100%" cellspacing="0">
+							<tr>
+							  <td class="icon-xl icon-success"> <i class="fas fa-check"></i> </td>
+							  <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td class="icon-xl icon-success"> <i class="fas fa-check"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td class="icon-xl icon-danger"> <i class="fas fa-times"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td class="icon-xl icon-success"> <i class="fas fa-check"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td class="icon-xl icon-danger"> <i class="fas fa-times"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+						  </table>
+						</div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+			<div class="col-xl-5 col-md-6 mb-4">
+			  <div class="card shadow border-left-warning">
+				<div class="card-body">
+				  <div class="row no-gutters align-items-center">
+					<div class="col mr-2">
+					  <div class="h6 text-xl font-weight-bolder text-warning text-uppercase mb-4">Student B</div>
+					  <div class="table-inline">
+						<table class="table-sm" width="100%" cellspacing="0">
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Age</td>
+							  <td id="b_age" colspan="1" class="h5 mb-0 font-weight-bold text-gray-800"> Infant</td>
+							</tr>
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Gender</td>
+							  <td id="b_gender" colspan="1" class="h5 mb-0 font-weight-bold text-gray-800"> Female </td>
+							</tr>
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Ethnicity</td>
+							  <td id="b_ethnicity" colspan="1" class="h5 mb-0 font-weight-bold text-gray-800"> Ethnic Majority</td>
+							</tr>
+							<tr>
+							  <td class="text-xl text-secondary text-uppercase mb-1">Disability</td>
+							  <td id="b_disability" colspan="1" class="h5 mb-0 font-weight-bold text-gray-800"> Physical </td>
+							</tr>
+						  </table>
+						</div>
+					</div>
+					<div class="col-auto">
+					  <div class="table-inline">
+						<table id="b_performance" class="table-bordered" width="100%" cellspacing="0">
+							<tr>
+							  <td class="icon-xl icon-success"> <i class="fas fa-check"></i> </td>
+							  <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td class="icon-xl icon-success"> <i class="fas fa-check"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td class="icon-xl icon-danger"> <i class="fas fa-times"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td id="b_4" class="icon-xl icon-success"> <i class="fas fa-check"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+							<tr>
+							   <td id="b_5" class="icon-xl icon-danger"> <i class="fas fa-times"></i> </td>
+							   <td colspan="1"> <div class="performance-item"> . </div> </td>
+							</tr>
+						  </table>
+						</div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  
+			<div class="scales">
+				<div class="table-inline">
+					<table class="table-sm" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th></th>
+							<th class="th-left">A</th>
+							<th class="th-right">B</th>
+						</tr>
+					</thead>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Emotion-recog</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="emotion-recognition" required=""/></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Communication</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="communication" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Consciousness</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="consciousness" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Experience</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="experience" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Agency</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="agency" /></td>
+					</tr>
+				  </table>
+				</div>
+				
+				<div class="table-inline">
+					<table class="table-sm" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th></th>
+							<th class="th-left">A</th>
+							<th class="th-right">B</th>
+						</tr>
+					</thead>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Self-control</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="self-control" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Memory</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="memory" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Planning</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="planning" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Thought</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="thought" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Personality</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="personality" /></td>
+					</tr>
+				  </table>
+				</div>
+				
+				<div class="table-inline">
+					<table class="table-sm" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th></th>
+							<th class="th-left">A</th>
+							<th class="th-right">B</th>
+						</tr>
+					</thead>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Problem-solving</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="problem-solving" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Decision-making</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="decision-making" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Organization</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="organization" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Critical-thinking</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="critical-thinking" /></td>
+					</tr>
+					<tr>
+					  <td class="header text-xl font-weight-normal text-secondary mb-1">Creative-thinking</td>
+					  <td colspan="2"><input class="custom-range" type="range" value="none" min="0" max="100" name="creative-thinking" /></td>
+					</tr>
+				  </table>
+				</div>
+			</div>
+			
+			<script> 
+				document.getElementById("user").value = accessCookie("username");
+				document.getElementById("origin").value = location.href.split("/").slice(-1);
+				
+				/* Generate student cards */
+				document.getElementById("a_age").innerText = getAge();
+				document.getElementById("b_age").innerText = getAge();
+				document.getElementById("a_ethnicity").innerText = getEthnicity();
+				document.getElementById("b_ethnicity").innerText = getEthnicity();
+				document.getElementById("a_gender").innerText = getGender();
+				document.getElementById("b_gender").innerText = getGender();
+				document.getElementById("a_disability").innerText = getDisability();
+				document.getElementById("b_disability").innerText = getDisability();
+				
+				document.getElementById("a_performance").innerHtml = getPerformanceTable();
+				document.getElementById("b_performance").innerHtml = getPerformanceTable();
+				
+				/* Set hidden values for db commit */
+				var child_inputs = document.getElementById('hidden_values').getElementsByTagName('input');
+
+				for(var i = 0; i < child_inputs.length; i++ ) {
+					var html_elem = document.getElementById(child_inputs[i].name);
+					child_inputs[i].value = html_elem.innerText;
+				}
+				
+			</script>
+			
+			<div class="submit">
+			  <div class="btn btn-light btn-icon-split">
+				<button type="submit" class="btn" id="postForm">
+					<span class="icon text-muted">
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
+					<span class="text font-weight-bolder mb-1">Submit</span>
+				</button>
+			  </div>
+			</div>
+		</form>
+	</div>
+	<!-- /.container-fluid -->
+	  
+  <!-- Scroll to Top Button 
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a> -->
+  
+  <!-- Footer 
+  <footer class="sticky-footer">
+	<div class="container my-auto">
+	  <div class="copyright text-center my-auto">
+		<span id="user">Hello</span>
+	  </div>
+	</div>
+  </footer> -->
+  <!-- End of Footer -->
+  
+  <script type="text/javascript">
+	var elem = document.getElementById("user")
+	elem.innerText = document.cookie;
+  </script>
+  
+  <script src="jquery.serializeObject.js"></script>
+  <script src="validation-functions.js"></script>
+  <!-- End of Footer -->
+  
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
