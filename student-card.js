@@ -2,7 +2,7 @@ var age_groups = ["Infant", "Child", "Teenager", "Adult", "Senior"];
 var ethnicity_groups = ["Multi-Ethnic", "Ethnic-Minority", "Ethnic-Majority"];
 var disability_groups = ["Physical", "Mental", "None"];
 var gender_groups = ["Female", "Male", "Other"];
-var performance_options = [1, 4, 3];
+var performance_options = [1, 4, 2, 3];
 var performance_total = 5;
 
 function getAge(){
@@ -48,13 +48,12 @@ function getPerformanceTable() {
 	//console.log(performance_gen);
 	var performance_temp_innerHTML = "";
 	for (var j = 0; j < performance_gen.length; j++){
-		performance_temp_innerHTML += '<tr><td class="icon-xl ' + (performance_gen[j] === 0 ? "icon-danger" : "icon-success") + '"> <i class=' + (performance_gen[j] === 0 ? '"fas fa-times"' : '"fas fa-check"') + '></i> </td><td colspten="1"> <div class="performance-item"> ' + (performance_gen[j] === 0 ? "0" : "1") + ' </div> </td></tr>'
+		performance_temp_innerHTML += '<tr><td class="icon-xl ' + (performance_gen[j] === 0 ? "icon-danger" : "icon-success") + '"><i class=' + (performance_gen[j] === 0 ? '"fas fa-times"' : '"fas fa-check"') + '></i> </td><td colspten="1"><div class="performance-item">' + (performance_gen[j] === 0 ? "0" : "1") + '</div></td></tr>'
 	}
 	
 	return performance_temp_innerHTML;
 	//document.getElementById("a_performance").innerHtml = performance_temp_innerHTML;
 }
-
 /*
 <table id="a_performance" class="table-bordered" width="100%" cellspacing="0">
 	<tr>

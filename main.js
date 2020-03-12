@@ -33,11 +33,9 @@ function checkCookie()
 	console.log(user)
   else
   {
-	user = uuidv4(); //prompt("Please enter your name");
-	//num = prompt("How many days you want to store your name on your computer?");
 	if (user!="" && user!=null)
 	{
-	createCookie("username", user, num);
+	createCookie("username", uuidv4());
 	}
   }
 }
