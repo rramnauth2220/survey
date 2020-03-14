@@ -298,8 +298,8 @@
 					validation_actions.push(0);
 				}
 				
-				checkCookie(); // instantiate a cookie for user id if necessary
-				document.getElementById("user").value = accessCookie("username");
+				document.getElementById("user").value = checkStorage("username")
+				console.log(document.getElementById("user").value);
 				document.getElementById("origin").value = location.href.split("/").slice(-1);
 				
 				/* Generate student cards */

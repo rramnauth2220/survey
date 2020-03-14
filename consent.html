@@ -45,7 +45,10 @@
 			<input type="text" class="hidden" id="origin" name="origin" value="none">
 			<input type="text" class="hidden" id="user" name="user" value="none">
 			<script> 
-				document.getElementById("user").value = accessCookie("username");
+				//checkCookie(); // instantiate a cookie for user id if necessary
+				//checkStorageItem();
+				//document.getElementById("user").value = accessCookie("username");
+				document.getElementById("user").value = checkStorage("username")
 				document.getElementById("origin").value = location.href.split("/").slice(-1);
 			</script>
 			<div class="row">
@@ -161,7 +164,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-  
+  x
   <!-- Footer 
   <footer class="sticky-footer">
 	<div class="container my-auto">

@@ -4,16 +4,11 @@ function uuidv4() {
   );
 }
 
-/*function createCookie(cookieName, cookieValue, daysToExpire)
-{
-  var date = new Date();
-  date.setTime(date.getTime()+(daysToExpire*24*60*60*1000));
-  document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
-}*/
 function createCookie(cookieName, cookieValue)
 {
   document.cookie = cookieName + "=" + cookieValue;
 }
+
 function accessCookie(cookieName)
 {
   var name = cookieName + "=";
@@ -26,16 +21,42 @@ function accessCookie(cookieName)
   }
 	return "";
 }
-function checkCookie()
-{
+
+function checkCookie() {
   var user = accessCookie("username");
-  if (user!="")
-	console.log(user)
-  else
-  {
-	if (user!="" && user!=null)
-	{
-	createCookie("username", uuidv4());
-	}
+  if (user!="" && user!=null) return user;
+  else {
+	 //if (user!="" && user!=null){
+	  createCookie("username", uuidv4());
+    return accessCookie("username");
+    //user = accessCookie("username");
+    //if (user == "" || user == null){
+    //  localStorage.user = id_gen;
+    //  using_storage = true;
+    //}
+	 //}
   }
+  return null;
+}
+
+function accessStorageItem(itemName){
+  return localStorage.getItem(itemName);
+}
+
+function checkStorage(){
+  if (checkBrowserSupport()){
+    var item = accessStorageItem("username");
+    if (item != "" || item != null) return item;
+    localStorage.setItem("username", uuidv4());
+    return accessStorageItem("username");
+  } else {
+    console.log("This browser does not support local storage. Use cookies?");
+    return checkCookie(); // contingency --> create a cookie instead.
+  }
+  return null;
+}
+
+// check browser's support of HTML5 local storage objects
+function checkBrowserSupport(){
+  return (typeof(Storage) !== "undefined");
 }
