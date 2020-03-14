@@ -46,7 +46,8 @@ function accessStorageItem(itemName){
 function checkStorage(){
   if (checkBrowserSupport()){
     var item = accessStorageItem("username");
-    if (item != "" || item != null) return item;
+    if (item != "" && item != null) return item;
+    // else
     localStorage.setItem("username", uuidv4());
     return accessStorageItem("username");
   } else {
